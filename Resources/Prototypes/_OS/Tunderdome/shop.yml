@@ -1,0 +1,170 @@
+- type: entity
+  parent: BaseItem
+  id: PortableMagaz
+  name: портативный магазин
+  description: С его помощью вы можете купить себе вооружение для анигиляции врагов.
+  suffix: arena
+  components:
+  - type: Sprite
+    sprite: _OS/Arena/magaz.rsi
+    scale: 0.85, 0.85
+    layers:
+    - state: magaz
+  - type: Item
+    sprite: _OS/Arena/magaz.rsi
+    heldPrefix: magaz
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Store
+    name: портативный магазин
+    categories:
+    - MagazWearpons
+    - MagazAmmo
+    - MagazLegendary
+    - MagazDefends
+    currencyWhitelist:
+    - Bib
+    balance:
+      Bib: 50
+
+- type: storeCategory
+  id: MagazWearpons
+  name: Вооружение
+  priority: 0
+
+- type: storeCategory
+  id: MagazAmmo
+  name: Боеприпасы
+  priority: 1
+
+- type: storeCategory
+  id: MagazDefends
+  name: Средства защиты
+  priority: 2
+
+- type: storeCategory
+  id: MagazLegendary
+  name: Легендарное
+  priority: 6
+
+- type: entity
+  name: бибкоин
+  parent: BaseItem
+  id: Bib
+  suffix: arena
+  description: Валюта, используемая для торговли на местных землях.
+  components:
+  - type: Sprite
+    sprite: _OS/Arena/bib.rsi
+    state: bib
+    scale: 0.7, 0.7
+  - type: Item
+    sprite: _OS/Arena/bib.rsi
+    size: Tiny
+  - type: Stack
+    count: 1
+    stackType: Bib
+  - type: Currency
+    price:
+      Bib: 1
+
+- type: entity
+  name: бибкоин
+  parent: Bib
+  id: Bib50
+  suffix: arena, 50
+  description: Валюта, используемая для торговли на местных землях.
+  components:
+  - type: Stack
+    count: 50
+    stackType: Bib
+  - type: Currency
+    price:
+      Bib: 1
+
+- type: stack
+  id: Bib
+  name: бибкоин
+  icon: _OS/Arena/bib.rsi
+  spawn: Bib1
+
+- type: currency
+  id: Bib
+  displayName: БИБКОИН
+  cash:
+    1: Bib
+  canWithdraw: true
+
+- type: listing
+  id: WeaponMakeshiftLaser
+  name: самодельный лазерный пистолет
+  description: Молитесь, чтобы он не обжёг вам руки.
+  productEntity: WeaponMakeshiftLaser
+  cost:
+    Bib: 20
+  categories:
+  - MagazWearpons
+
+- type: listing
+  id: WeaponLaserSvalinn
+  name: лазерный пистолет Свалинн
+  description: Дешёвый и широко распространённый лазерный пистолет.
+  productEntity: WeaponLaserSvalinn
+  cost:
+    Bib: 10
+  categories:
+  - MagazWearpons
+
+- type: listing
+  id: WeaponLaserCarbine
+  name: лазерная винтовка
+  description: Предпочитается службой безопасности Nanotrasen за дешевизну и простоту использования.
+  productEntity: WeaponLaserCarbine
+  cost:
+    Bib: 35
+  categories:
+  - MagazWearpons
+
+- type: listing
+  id: WeaponLaserGun
+  name: старомодный лазерный бластер
+  description: Оружие, использующее свет, усиленный излучением радиации.
+  productEntity: WeaponLaserGun
+  cost:
+    Bib: 45
+  categories:
+  - MagazWearpons
+
+- type: listing
+  id: WeaponAdvancedLaser
+  name: продвинутый лазерный пистолет
+  description: Экспериментальный высокоэнергетический лазерный пистолет с самозаряжающейся ядерной батареей.
+  productEntity: WeaponAdvancedLaser
+  cost:
+    Bib: 65
+  categories:
+  - MagazWearpons
+
+- type: listing
+  id: WeaponLaserCannon
+  name: лазерная пушка
+  description: Тяжёлое сверхмощное лазерное оружие.
+  productEntity: WeaponLaserCannon
+  cost:
+    Bib: 80
+  categories:
+  - MagazWearpons
+
+- type: listing
+  id: RiotLaserShield
+  name: противолазерный щит
+  description: Щит на случай беспорядков, созданный противостоять лазерам, но не более того.
+  productEntity: RiotLaserShield
+  cost:
+    Bib: 15
+  categories:
+  - MagazDefends

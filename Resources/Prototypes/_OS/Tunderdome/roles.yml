@@ -1,0 +1,24 @@
+- type: job
+  id: Warrior
+  name: воин
+  description: сражайся до конца!
+  playTimeTracker: JobWarrior
+  startingGear: WarriorGear
+  icon: "JobIconBartender"
+  supervisors: job-supervisors-warrior
+  access:
+  - Service
+
+- type: startingGear
+  id: WarriorGear
+  equipment:
+    head: ClothingHeadHatBeretMerc
+    shoes: ClothingShoesBootsJackFilled
+    mask: ClothingMaskNeckGaiter
+    belt: ClothingBeltMilitaryWebbing
+    gloves: ClothingHandsGlovesCombat
+    jumpsuit: ClothingUniformJumpsuitTacticool
+    pocket1: PortableMagaz
+  #storage:
+    #belt:
+    #- Stuff

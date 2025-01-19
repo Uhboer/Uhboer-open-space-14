@@ -29,7 +29,7 @@ public sealed class GhostBarSystem : EntitySystem
 
     private static readonly List<ProtoId<JobPrototype>> _jobComponents = new()
     {
-        "Passenger", "Bartender", "Botanist", "Chef", "Janitor"
+        "Warrior"
     };
 
     public override void Initialize()
@@ -39,7 +39,7 @@ public sealed class GhostBarSystem : EntitySystem
         SubscribeLocalEvent<GhostBarPlayerComponent, MindRemovedMessage>(OnPlayerGhosted);
     }
 
-    const string MapPath = "Maps/_Goobstation/Nonstations/ghostbar.yml";
+    const string MapPath = "Maps/_OS/arena.yml";
     private void OnRoundStart(RoundStartingEvent ev)
     {
         _mapSystem.CreateMap(out var mapId);

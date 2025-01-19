@@ -1,2 +1,2 @@
-ent-GhostBarSpawner = ghost bar spawn point
+ent-GhostBarSpawner = tunderdrom spawn point
     .desc = { ent-MarkerBase.desc }
